@@ -1,0 +1,144 @@
+﻿<!-- ========== HEADER ========== -->
+<header id="header" class="navbar navbar-expand-lg navbar-light navbar-end bg-white navbar-sticky-top navbar-show-hide">
+    <div class="container">
+        <nav class="navbar-nav-wrap">
+            <!-- Default Logo -->
+            <a class="navbar-brand" href="/Home/Index" aria-label="Adven">
+                <img class="navbar-brand-logo" src="~/Unify/assets/svg/logos/logo.svg" alt="Adven Mühendislik">
+            </a>
+            <!-- End Default Logo -->
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-default">
+                    <i class="bi-list"></i>
+                </span>
+                <span class="navbar-toggler-toggled">
+                    <i class="bi-x"></i>
+                </span>
+            </button>
+            <!-- End Toggler -->
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav nav-pills">
+                    <!-- Hakkımızda -->
+                    <li class="nav-item dropdown">
+                        <a id="hakkimizdaMegaMenu" class="nav-link dropdown-toggle " aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kurumsal</a>
+
+                        <!-- Mega Menu -->
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="hakkimizdaMegaMenu" style="min-width: 35rem;">
+                            <!-- Main Content -->
+                            <div class="row">
+                                <div class="col-lg d-none d-lg-block">
+                                    <div class="d-flex align-items-start flex-column bg-light rounded-3 h-100 p-4">
+                                        <span class="fs-3 fw-bold d-block">Anasayfa</span>
+                                        <p class="text-body">&nbsp;</p>
+                                        <div class="mt-auto">
+                                            <p class="mb-1"><a class="link link-dark link-pointer" href="#">&nbsp;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm">
+                                    <div class="navbar-dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Biz kimiz</a>
+                                        <a class="dropdown-item" href="#">Kalite Politikamız</a>
+                                        <a class="dropdown-item" href="#">KKVK Aydınlatma Metni</a>
+                                        <a class="dropdown-item" href="#">Vizyon ve Misyon</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Main Content -->
+                        </div>
+                        <!-- End Mega Menu -->
+                    </li>
+                    <!-- End Hakkımızda -->
+                    <!-- Hizmetler -->
+                    <li class="nav-item dropdown">
+                        <a id="hizmetMegaMenu" class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hizmetlerimiz</a>
+                        @await Component.InvokeAsync("_MenuPartial")
+                    </li>
+                    <!-- End Hizmetler -->
+                    <!-- Projeler -->
+                    <li class="nav-item dropdown">
+                        <a id="projeMegaMenu" class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projeler</a>
+
+                        <!-- Mega Menu -->
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="projeMegaMenu" style="min-width: 20rem;">
+                            <!-- Link -->
+                            <a class="navbar-dropdown-menu-media-link" href="../documentation/index.html">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi-file-earmark-text fs-2 text-dark"></i>
+                                    </div>
+
+                                    <div class="flex-grow-1 ms-3">
+                                        <span class="navbar-dropdown-menu-media-title">Devam eden Projeler </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End Link -->
+
+                            <div class="dropdown-divider"></div>
+
+                            <!-- Link -->
+                            <a class="navbar-dropdown-menu-media-link" href="../snippets/index.html">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi-layers fs-2 text-dark"></i>
+                                    </div>
+
+                                    <div class="flex-grow-1 ms-3">
+                                        <span class="navbar-dropdown-menu-media-title">Tamamlanmış Projeler</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End Link -->
+                        </div>
+                        <!-- End Mega Menu -->
+                    </li>
+                    <!-- End Projeler -->
+                    <!-- İletişim -->
+                    <li class="nav-item dropdown">
+                        <a id="iletisimMegaMenu" class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">İletişim</a>
+
+                        <!-- Mega Menu -->
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="iletisimMegaMenu" style="min-width: 15rem;">
+                            <!-- Main Content -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="navbar-dropdown-menu-inner">
+                                        <a class="dropdown-item " href="../blog-modern.html">Modern <span class="badge text-primary">New</span></a>
+                                        <a class="dropdown-item " href="../blog-grid.html">Grid</a>
+                                        <a class="dropdown-item " href="../blog-list.html">List</a>
+                                        <a class="dropdown-item " href="../blog-article.html">Article <span class="badge text-primary">New</span></a>
+                                        <a class="dropdown-item " href="../blog-author-profile.html">Author Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Main Content -->
+                        </div>
+                        <!-- End Mega Menu -->
+                    </li>
+                    <!-- End İletişim -->
+                    <!-- Online -->
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle btn btn-dark d-lg-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Online İşlemler</a>
+                        <a class="dropdown-toggle btn btn-dark d-none d-lg-inline-block" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Online İşlemler</a>
+                        <!-- Mega Menu -->
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="docsMegaMenu" style="min-width: 20rem;">
+                            <a class="dropdown-item" href="http://ges.adven.com.tr" target="_blank">GES İzleme Portalı</a>
+                            <a class="dropdown-item" href="http://fizibilite.adven.com.tr" target="_blank">GES Fizibilite Hesapla</a>
+                            <a class="dropdown-item" href="http://fizibilite.adven.com.tr" target="_blank">Fatura Hesaplama</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="http://www.adven.com.tr/TeklifAl" target="_blank">Teklif Al</a>
+                        </div>
+                        <!-- End Mega Menu -->
+                    </li>
+                    <!-- End Online -->
+                </ul>
+            </div>
+            <!-- End Collapse -->
+        </nav>
+    </div>
+</header>
+<!-- ========== END HEADER ========== -->

@@ -1,0 +1,96 @@
+﻿@model EntityLayer.Concrete.Hizmetler
+@{
+	ViewData["Title"] = "HizmetGuncelle";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+	<div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+		<div class="card-body px-4 py-3">
+			<div class="row align-items-center">
+				<div class="col-9">
+					<h4 class="fw-semibold mb-8">Hizmetler</h4>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/Home/">Anasayfa</a>
+							</li>
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/Hizmetler/Index">Hizmetler</a>
+							</li>
+							<li class="breadcrumb-item" aria-current="page">Hizmet Güncelle</li>
+							<li class="breadcrumb-item" aria-current="page">@ViewBag.Adi</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-3">
+					<div class="text-center mb-n5">
+						<img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" class="img-fluid mb-n4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form method="post" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Hizmet İçeriği</h4>
+						<p class="card-subtitle mb-3">
+							&nbsp;
+						</p>
+						<input type="hidden" asp-for="HizmetID" />
+						<div class="form-floating mb-3">
+							<textarea class="form-control summernote1" cols="10" rows="5" asp-for="Aciklama"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Hizmet Bilgileri</h4>
+						<p class="card-subtitle mb-3">
+							&nbsp;
+						</p>
+						<form method="post" enctype="multipart/form-data">
+							<div class="form-floating mb-3">
+								<img src="~/Upload/Hizmetler/@Url.Content(ViewBag.Resim)" class="img-fluid rounded" height="400">
+							</div>
+							<div class="form-floating mb-3">
+								<input type="text" asp-for="HizmetAdi" class="form-control border border-info" placeholder="Hizmet başlığı">
+								<label>
+									<i class="ti ti-user me-2 fs-4 text-info"></i>
+									<span class="border-start border-info ps-3">Hizmet Adı *</span>
+								</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="file" name="picture" class="form-control border border-info" placeholder="Hizmet Fotoğrafı">
+								<label>
+									<i class="ti ti-photo me-2 fs-4 text-info"></i>
+									<span class="border-start border-info ps-3">Hizmet Fotoğrafı *</span>
+								</label>
+							</div>
+							<div class="form-floating mb-3">
+								@Html.EditorFor(model => model.Anasayfa, new { htmlAttributes = new { @class = "form-control border border-info" } })
+								<label>
+									<i class="ti ti-home me-2 fs-4 text-info"></i>
+									<span class="border-start border-info ps-3">Anasayfada Listelensin mi?</span>
+								</label>
+							</div>
+							<div class="d-md-flex align-items-center">
+								<div class="mt-3 mt-md-0 ms-auto">
+									<button type="submit" class="btn btn-info hstack gap-6">
+										<i class="ti ti-send me-2 fs-4"></i>
+										Kaydet
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

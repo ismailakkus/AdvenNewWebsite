@@ -1,0 +1,82 @@
+﻿@model EntityLayer.Concrete.Referanslar
+@{
+	ViewData["Title"] = "ReferansGuncelle";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+	<div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+		<div class="card-body px-4 py-3">
+			<div class="row align-items-center">
+				<div class="col-9">
+					<h4 class="fw-semibold mb-8">Referanslar</h4>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/Home/">Anasayfa</a>
+							</li>
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/Referanslar/">Referanslar</a>
+							</li>
+							<li class="breadcrumb-item" aria-current="page">Referans Güncelle</li>
+							<li class="breadcrumb-item" aria-current="page">@ViewBag.Adi</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-3">
+					<div class="text-center mb-n5">
+						<img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" class="img-fluid mb-n4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form method="post" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Referans Bilgileri</h4>
+						<p class="card-subtitle mb-3">
+							&nbsp;
+						</p>
+						<input type="hidden" asp-for="ReferansID" />
+						<div class="form-floating mb-3">
+							<img src="~/Upload/Referanslar/@Url.Content(ViewBag.Resim)" class="img-fluid rounded" width="400" height="400">
+						</div>
+						<div class="form-floating mb-3">
+
+							<input type="text" asp-for="ReferansAdi" class="form-control border border-info" placeholder="Referans Adı">
+							<label>
+								<i class="ti ti-user me-2 fs-4 text-info"></i>
+								<span class="border-start border-info ps-3">Referans Adı *</span>
+							</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="file" name="picture" class="form-control border border-info" placeholder="Referans Logosu">
+							<label>
+								<i class="ti ti-photo me-2 fs-4 text-info"></i>
+								<span class="border-start border-info ps-3">Referans Logosu *</span>
+							</label>
+						</div>
+						<div class="form-floating mb-3">
+							@Html.EditorFor(model => model.AktifMi, new { htmlAttributes = new { @class = "form-control border border-info" } })
+							<label>
+								<i class="ti ti-home me-2 fs-4 text-info"></i>
+								<span class="border-start border-info ps-3">Aktif mi?</span>
+							</label>
+						</div>
+						<div class="d-md-flex align-items-center">
+							<div class="mt-3 mt-md-0 ms-auto">
+								<button type="submit" class="btn btn-info hstack gap-6">
+									<i class="ti ti-send me-2 fs-4"></i>
+									Kaydet
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<Haberler>
+
+<div class="container content-space-2">
+	<div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+		<h2>Sektörel Haberler</h2>
+		<p>Yenilenebilir enerji sektörüne ilişkin güncel haberler ve gelişmeleri buradan takip edebilirsiniz.</p>
+	</div>
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+		@foreach (var item in Model)
+		{
+			<div class="col mb-5 mb-sm-10">
+				<!-- Card -->
+				<a class="card card-ghost card-transition-zoom h-100" href="/Haberler/HaberDetay/@item.HaberID">
+					<div class="card-transition-zoom-item">
+						<img class="card-img" src="~/Upload/Haberler/@item.HaberFoto" alt="@item.HaberBaslik">
+						<span class="badge bg-dark text-white card-pinned-top-end">@String.Format("{0:dd.MM.yyyy}", item.EklemeTarihi)</span>
+					</div>
+
+					<div class="card-body">
+						<h5>@item.HaberBaslik</h5>
+					</div>
+					<div class="card-footer mt-n5 mt-sm-0">
+						<span class="card-link">Devamını oku...</span>
+					</div>
+				</a>
+				<!-- End Card -->
+			</div>
+			<!-- End Col -->
+		}
+	</div>
+	<!-- End Row -->
+</div>

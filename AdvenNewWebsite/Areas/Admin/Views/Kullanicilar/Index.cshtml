@@ -1,0 +1,128 @@
+﻿@using EntityLayer.Concrete
+@model List<Kullanicilar>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+	<div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+		<div class="card-body px-4 py-3">
+			<div class="row align-items-center">
+				<div class="col-9">
+					<h4 class="fw-semibold mb-8">Kullanıcılar</h4>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/Home/">Anasayfa</a>
+							</li>
+							<li class="breadcrumb-item" aria-current="page">Kullanıcılar</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-3">
+					<div class="text-center mb-n5">
+						<img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" alt="modernize-img" class="img-fluid mb-n4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card overflow-hidden chat-application">
+		<div class="d-flex w-100">
+			<div class="d-flex w-100">
+				<div class="min-width-340">
+					<div class="border-end user-chat-box h-100">
+						<div class="px-4 pt-9 pb-6 d-none d-lg-block">
+							<a class="btn btn-primary fw-semibold py-8 w-100" href="KullaniciEkle">Yeni Kullanıcı Ekle</a>
+						</div>
+						<div class="app-chat">
+							<ul class="chat-users mh-n100" data-simplebar="">
+								@{
+									var i = 0;
+									foreach (var item in Model)
+									{
+										var itemClass = i++ == 0 ? "chat-user bg-light-subtle" : "chat-user";
+										<li>
+											<a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-center @itemClass" id="chat_user_@item.KullaniciID" data-user-id="@item.KullaniciID">
+												<span class="position-relative">
+													<img src="~/Upload/Kullanicilar/@item.Resim" width="40" height="40" class="rounded-circle">
+												</span>
+												<div class="ms-6 d-inline-block w-75">
+													<h6 class="mb-1 fw-semibold chat-title" data-username="@item.AdiSoyadi">
+														@item.AdiSoyadi
+													</h6>
+													<span class="fs-2 text-body-color d-block">@item.KullaniciEmail</span>
+												</div>
+											</a>
+										</li>
+									}
+								}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="w-100">
+					<div class="chat-container h-100 w-100">
+						<div class="chat-box-inner-part h-100">
+							<div class="chatting-box app-email-chatting-box">
+								<div class="p-9 py-3 border-bottom chat-meta-user d-flex align-items-center justify-content-between">
+									<h5 class="text-dark mb-0 fs-5">Kullanıcı Bilgileri</h5>
+								</div>
+								<div class="position-relative overflow-hidden">
+									<div class="position-relative">
+										<div class="chat-box email-box mh-n100 p-9" data-simplebar="init">
+											@{
+												var j = 0;
+												foreach (var item in Model)
+												{
+													var itemClass = j++ == 0 ? "chat active-chat" : "chat";
+													<div class="chat-list @itemClass" data-user-id="@item.KullaniciID">
+														<div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between">
+															<div class="d-flex align-items-center gap-3">
+																<img src="~/Upload/Kullanicilar/@item.Resim" width="72" height="72" class="rounded-circle">
+																<div>
+																	<h6 class="fs-4 mb-0">@item.AdiSoyadi </h6>
+																	<p class="mb-0">@item.KullaniciEmail</p>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-4 mb-7">
+																<p class="mb-1 fs-2">Telefon</p>
+																<h6 class="fw-semibold mb-0">@item.Telefon</h6>
+															</div>
+															<div class="col-8 mb-7">
+																<p class="mb-1 fs-2">Email Adresi</p>
+																<h6 class="fw-semibold mb-0">@item.KullaniciEmail</h6>
+															</div>
+															<div class="col-12 mb-9">
+																<p class="mb-1 fs-2">Adres</p>
+																<h6 class="fw-semibold mb-0">@item.Adres</h6>
+															</div>
+														</div>
+														<div class="border-bottom pb-7 mb-4">
+															<p class="mb-2 fs-2">Notlar</p>
+															<p class="mb-3 text-dark">
+																@item.Notlar
+															</p>
+														</div>
+														<div class="d-flex align-items-center gap-6">
+															<a class="btn btn-outline-primary" href="/Admin/Kullanicilar/KullaniciGuncelle/@item.KullaniciID">Düzenle</a>
+															<a class="btn bg-danger-subtle text-danger" href="/Admin/Kullanicilar/KullaniciSil/@item.KullaniciID">Sil</a>
+														</div>
+													</div>
+												}
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

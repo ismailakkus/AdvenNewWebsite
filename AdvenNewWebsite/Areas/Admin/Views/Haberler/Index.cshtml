@@ -1,0 +1,130 @@
+﻿@using EntityLayer.Concrete
+@model List<Haberler>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+        <div class="card-body px-4 py-3">
+            <div class="row align-items-center">
+                <div class="col-9">
+                    <h4 class="fw-semibold mb-8">Haberler</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a class="text-muted text-decoration-none" href="/Admin/">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">Haberler</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <div class="text-center mb-n5">
+                        <img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" class="img-fluid mb-n4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card w-100 position-relative overflow-hidden">
+        <div class="px-4 py-3 border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <h4 class="mb-0">Haber Listesi</h4>
+                <a href="HaberEkle"><span class="badge text-bg-primary">Yeni Haber</span></a>
+            </div>
+        </div>
+        <div class="card-body p-4">
+            <div class="table-responsive mb-4 border rounded-1">
+                <table class="table text-nowrap mb-0 align-middle">
+                    <thead class="text-dark fs-4">
+                        <tr>
+                            <th>
+                                <h6 class="fs-4 fw-semibold mb-0">Başlık</h6>
+                            </th>
+                            <th>
+                                <h6 class="fs-4 fw-semibold mb-0">Okunma Sayısı</h6>
+                            </th>
+                            <th>
+                                <h6 class="fs-4 fw-semibold mb-0">Durum</h6>
+                            </th>
+                            <th>
+                                <h6 class="fs-4 fw-semibold mb-0">Anasayfa</h6>
+                            </th>
+                            <th>
+                                <h6 class="fs-4 fw-semibold mb-0">İşlem</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="~/Upload/Haberler/@item.HaberFoto" class="rounded-2" width="40" height="40">
+                                        <div class="ms-3">
+                                            <h6 class="fw-semibold mb-1">@item.HaberBaslik</h6>
+                                            <span class="fw-normal">@String.Format("{0:dd.MM.yyyy}", item.EklemeTarihi)</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>                                    
+                                    <div class="ms-3">
+                                        <h6 class="fw-normal">@item.OkunmaSayisi</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    @if (item.AktifMi == true)
+                                    {
+                                        <span class="badge text-bg-success">Aktif</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge text-bg-warning">Pasif</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Anasayfa == true)
+                                    {
+                                        <span class="badge bg-success-subtle text-success fw-semibold fs-2 gap-1 d-inline-flex align-items-center"><i class="ti ti-check fs-4"></i> Evet</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge text-bg-light text-dark fw-semibold fs-2 gap-1 d-inline-flex align-items-center">Hayır</span>
+                                    }                           
+                                </td>
+                                <td>
+                                    <div class="dropdown dropstart">
+                                        <a href="javascript:void(0)" class="text-muted" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="ti ti-dots fs-5"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-3" href="/Haberler/Details/@item.HaberID" target="_blank">
+                                                    <i class="fs-4 ti ti-eye"></i>Görüntüle
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-3" href="/Admin/Haberler/HaberGuncelle/@item.HaberID">
+                                                    <i class="fs-4 ti ti-edit"></i>Düzenle
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-3" href="/Admin/Haberler/HaberSil/@item.HaberID">
+                                                    <i class="fs-4 ti ti-trash"></i>Sil
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

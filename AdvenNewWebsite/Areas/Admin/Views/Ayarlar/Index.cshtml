@@ -1,0 +1,543 @@
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+	<div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+		<div class="card-body px-4 py-3">
+			<div class="row align-items-center">
+				<div class="col-9">
+					<h4 class="fw-semibold mb-8">Kurumsal Bilgiler</h4>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/Home/Index">Anasayfa</a>
+							</li>
+							<li class="breadcrumb-item" aria-current="page">Kurumsal</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-3">
+					<div class="text-center mb-n5">
+						<img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" class="img-fluid mb-n4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<ul class="nav nav-pills user-profile-tab" id="pills-tab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link position-relative rounded-0 active d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-account-tab" data-bs-toggle="pill" data-bs-target="#pills-account" type="button" role="tab" aria-controls="pills-account" aria-selected="true">
+					<i class="ti ti-user-circle me-2 fs-6"></i>
+					<span class="d-none d-md-block">Şirket Bilgileri</span>
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-notifications-tab" data-bs-toggle="pill" data-bs-target="#pills-notifications" type="button" role="tab" aria-controls="pills-notifications" aria-selected="false">
+					<i class="ti ti-bell me-2 fs-6"></i>
+					<span class="d-none d-md-block">Banka Bilgileri</span>
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-bills-tab" data-bs-toggle="pill" data-bs-target="#pills-bills" type="button" role="tab" aria-controls="pills-bills" aria-selected="false">
+					<i class="ti ti-article me-2 fs-6"></i>
+					<span class="d-none d-md-block">Site Ayarları</span>
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security" aria-selected="false">
+					<i class="ti ti-lock me-2 fs-6"></i>
+					<span class="d-none d-md-block">Mail Ayarları</span>
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-3" id="pills-pages-tab" data-bs-toggle="pill" data-bs-target="#pills-pages" type="button" role="tab" aria-controls="pills-pages" aria-selected="false">
+					<i class="ti ti-sitemap me-2 fs-6"></i>
+					<span class="d-none d-md-block">Sayfa Ayarları</span>
+				</button>
+			</li>
+		</ul>
+		<div class="card-body">
+			<div class="tab-content" id="pills-tabContent">
+				<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab" tabindex="0">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title">Temel Bilgiler</h4>
+									<p class="card-subtitle">&nbsp;</p>
+									<div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-article text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Şirket Adı</h5>
+													<p class="mb-0">ADVEN Mühendislik Sanayi ve Ticaret Limited Şirketi</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-checkbox text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">NACE Kodu</h5>
+													<p class="mb-0">71.12.09</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-clock-hour-4 text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Faaliyet Alanı</h5>
+													<p class="mb-0">Enerji projelerine yönelik mühendislik ve danışmanlık faaliyetleri (kömür, petrol ve gaz gibi enerji yakıtları kullananlar ile nükleer, su, güneş, rüzgar ve diğer enerjiler için santrallere ve enerji iletim ve dağıtım hatlarına yönelik hizmetler)</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-truck-delivery text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Adres</h5>
+													<p class="mb-0">	Hoşnudiye Mah. Çiftkurt Sok. No:1/17 Tepebaşı/ESKİŞEHİR</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title">İletişim Bilgileri</h4>
+									<p class="card-subtitle">&nbsp;</p>
+									<div>
+										<div class="d-flex align-items-center justify-content-between mt-7">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-phone text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<p class="mb-0">Telefon</p>
+													<h5 class="fs-4 fw-semibold">(0 537) 378 52 94   -   (0 222) 221 21 31</h5>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mt-7">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-mail text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<p class="mb-0">E-Mail / KEP Mail</p>
+													<h5 class="fs-4 fw-semibold">info@adven.com.tr / adven.muhendislik@hs01.kep.tr</h5>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mt-7">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-world text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<p class="mb-0">Website</p>
+													<h5 class="fs-4 fw-semibold">http://www.adven.com.tr - http://www.adven.net</h5>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mt-7">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-map-2 text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<p class="mb-0">Konum</p>
+													<h5 class="fs-4 fw-semibold">39.77865, 30.51828</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title">İşyeri Bilgileri</h4>
+									<p class="card-subtitle">&nbsp;</p>
+									<div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-receipt text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Mersis No</h5>
+													<p class="mb-0">0008087463100018</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-trending-up text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Ticari Sicil No</h5>
+													<p class="mb-0">42992</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-briefcase text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">SSK No</h5>
+													<p class="mb-0">1650282843</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-building text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Büro Tescil No</h5>
+													<p class="mb-0">26260080874631</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="d-flex align-items-center justify-content-end gap-6">
+								<button class="btn btn-primary">Güncelle</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab" tabindex="0">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Ziraat_Bankas%C4%B1_logo.svg" class="rounded-2" height="40" /></h4>
+									<p class="card-subtitle">&nbsp;</p>
+									<div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-article text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Hesap Adı</h5>
+													<p class="mb-0">ADVEN MÜHENDİSLİK SAN. TİC. LTD ŞİRKT</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-lira text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (Türk Lirası)</h5>
+													<p class="mb-0">TR56 0001 0026 3878 8181 0550 02</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-dollar text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (USD)</h5>
+													<p class="mb-0">TR29 0001 0026 3878 8181 0550 03</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/T%C3%BCrkiye_%C4%B0%C5%9F_Bankas%C4%B1_logo.svg" class="rounded-2" height="60" /></h4>
+									<p class="card-subtitle">&nbsp;</p>
+									<div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-article text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Hesap Adı</h5>
+													<p class="mb-0">ADVEN MÜHENDİSLİK SANAYİ VE</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-lira text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (Türk Lirası)</h5>
+													<p class="mb-0">TR16 0006 4000 0014 4004 4791 89</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-dollar text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (USD)</h5>
+													<p class="mb-0">TR05 0006 4000 0024 4001 6253 51</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Vak%C4%B1fbank_logo.svg" class="rounded-2" height="25" /></h4>
+									<p class="card-subtitle">&nbsp;</p>
+									<div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-article text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">Hesap Adı</h5>
+													<p class="mb-0">ADVEN MÜHENDİSLİK SANAYİ VE TİCARET LİMİTED ŞİRKETİ</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-lira text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (Çek Hesabı)</h5>
+													<p class="mb-0">TR17 0001 5001 5800 7329 3084 81</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-lira text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (Vinov)</h5>
+													<p class="mb-0">TR52 0001 5001 5800 7329 3082 39</p>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<div class="d-flex align-items-center gap-3">
+												<div class="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
+													<i class="ti ti-currency-lira text-dark d-block fs-7" width="22" height="22"></i>
+												</div>
+												<div>
+													<h5 class="fs-4 fw-semibold">IBAN (Vana - Vergi Hesabı)</h5>
+													<p class="mb-0">TR59 0001 5001 5800 7329 3234 39</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="d-flex align-items-center justify-content-end gap-6">
+								<button class="btn btn-primary">Güncelle</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="pills-bills" role="tabpanel" aria-labelledby="pills-bills-tab" tabindex="0">
+					<div class="row">
+						<div class="col-lg-6 d-flex align-items-stretch">
+							<div class="card w-100 border position-relative overflow-hidden">
+								<div class="card-body p-4">
+									<h4 class="card-title">Şirket Logosu</h4>
+									<p class="card-subtitle mb-4">Anasayfada görünecek logoyu buradan değiştirebilirsiniz.</p>
+									<div class="text-center">
+										<img src="../assets/images/profile/user-1-1.jpg" alt="modernize-img" class="img-fluid rounded-circle" width="120" height="120">
+										<div class="d-flex align-items-center justify-content-center my-4 gap-6">
+											<button class="btn btn-primary">Yükle</button>
+											<button class="btn bg-danger-subtle text-danger">Sıfırla</button>
+										</div>
+										<p class="mb-0">Sadece JPG, PNG, SVG formatları yüklenebilir.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 d-flex align-items-stretch">
+							<div class="card w-100 border position-relative overflow-hidden">
+								<div class="card-body p-4">
+									<h4 class="card-title">Site Bilgileri</h4>
+									<p class="card-subtitle mb-4">Siteye ait temel bilgileri bu menüden değiştirebilirsiniz.</p>
+									<form>
+										<div class="mb-3">
+											<label for="exampleInputPassword1" class="form-label">Site Adı</label>
+											<input type="text" class="form-control" id="exampleInputPassword1" value="Adven Mühendislik">
+										</div>
+										<div class="mb-3">
+											<label for="exampleInputPassword2" class="form-label">Site Adresi</label>
+											<input type="text" class="form-control" id="exampleInputPassword2" value="www.adven.com.tr">
+										</div>
+										<div>
+											<label for="exampleInputPassword3" class="form-label">LinkedIn </label>
+											<input type="text" class="form-control" id="exampleInputPassword3" value="https://www.linkedin.com/AdvenMuhendislik">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="card w-100 border position-relative overflow-hidden mb-0">
+								<div class="card-body p-4">
+									<h4 class="card-title">Meta Bilgileri</h4>
+									<p class="card-subtitle mb-4">Arama motoru optimizsayonları, site tanımları vb. bilgiler bu alanda yönetilecektir.</p>
+									<form>
+										<div class="row">
+											<div class="col-12">
+												<div class="mb-3">
+													<label for="exampleInputtext4" class="form-label">Site Tanımı</label>
+													<input type="text" class="form-control" id="exampleInputtext4" value="Adven Mühendislik Sanayi ve Ticaret Limited Şirketi Resmi İnternet Sitesi. GES İşletme ve Bakım Hizmetleri, Yüksek Gerilim Proje ve İşletme Sorumluluğu hizmetleri.">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="mb-3">
+													<label for="exampleInputtext4" class="form-label">Meta Taglar</label>
+													<input type="text" class="form-control" id="exampleInputtext4" value="adven, ges, enh projeleri, osos, ges bakım, ges işletme, yg işletme sorumluluğu, yüksek gerilim işletme sorumluluğu, güneş enerjisi santralleri, epdk, enerji nakil hatları, ">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="d-flex align-items-center justify-content-end mt-4 gap-6">
+													<button class="btn btn-primary">Kaydet</button>
+													<button class="btn bg-danger-subtle text-danger">Vazgeç</button>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab" tabindex="0">
+					<div class="row justify-content-center">
+						<div class="col-lg-12">
+							<div class="card border shadow-none">
+								<div class="card-body p-4">
+									<h4 class="card-title mb-3">SMS ve SMTP Ayarları</h4>
+									<form>
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="mb-3">
+													<label for="exampleInputtext6" class="form-label">SMS Telefon*</label>
+													<input type="text" class="form-control" id="exampleInputtext6" value="(0537) 378 52 94">
+												</div>
+												<div class="mb-3">
+													<label for="exampleInputtext6" class="form-label">E-Posta Adresi*</label>
+													<input type="text" class="form-control" id="exampleInputtext6" value="info@adven.com.tr">
+												</div>
+												<div class="mb-3">
+													<label for="exampleInputtext7" class="form-label">Mail Server*</label>
+													<input type="text" class="form-control" id="exampleInputtext7" value="smtp.adven.com.tr">
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="mb-3">
+													<label for="exampleInputtext8" class="form-label">Şifre*</label>
+													<input type="text" class="form-control" id="exampleInputtext8" value="Adven1234.*">
+												</div>
+												<div class="mb-3">
+													<label for="exampleInputtext9" class="form-label">Gelen Port*</label>
+													<input type="text" class="form-control" id="exampleInputtext9" value="110">
+												</div>
+												<div class="mb-3">
+													<label for="exampleInputtext10" class="form-label">Giden Port*</label>
+													<input type="text" class="form-control" id="exampleInputtext10" value="587">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="d-flex align-items-center justify-content-end mt-4 gap-6">
+													<button class="btn btn-primary">Kaydet</button>
+													<button class="btn bg-danger-subtle text-danger">Vazgeç</button>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="pills-pages" role="tabpanel" aria-labelledby="pills-pages-tab" tabindex="0">
+					<div class="row justify-content-center">
+						<div class="col-lg-12">
+							<div class="card border shadow-none">
+								<div class="card-body">
+									<h4 class="card-title mb-3">Hakkımızda</h4>
+									<div class="ql-container ql-snow">
+										<textarea class="form-control summernote" cols="10" id="Hakkimizda" name="Hakkimizda" rows="5"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="card border shadow-none">
+								<div class="card-body">
+									<h4 class="card-title mb-3">Vizyon ve Misyon</h4>
+									<div class="ql-container ql-snow">
+										<textarea class="form-control summernote" cols="10" id="VizyonMisyon" name="VizyonMisyon" rows="5"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="card border shadow-none">
+								<div class="card-body">
+									<h4 class="card-title mb-3">Hizmet ve Kalite Politikası</h4>
+									<div class="ql-container ql-snow">
+										<textarea class="form-control summernote" cols="10" id="HizmetPolitikasi" name="HizmetPolitikasi" rows="5"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

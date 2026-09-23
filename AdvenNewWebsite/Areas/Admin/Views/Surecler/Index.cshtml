@@ -1,0 +1,110 @@
+﻿@using EntityLayer.Concrete
+@model List<Surecler>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Unify/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+<div class="container-fluid">
+    <div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+        <div class="card-body px-4 py-3">
+            <div class="row align-items-center">
+                <div class="col-9">
+                    <h4 class="fw-semibold mb-8">Süreçler</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a class="text-muted text-decoration-none" href="/Admin/Home/">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">Süreçler</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <div class="text-center mb-n5">
+                        <img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" class="img-fluid mb-n4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="related-products pt-7">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="px-4 py-3 border-bottom">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <h4 class="mb-0">Süreç Listesi</h4>
+                            <a href="SurecEkle"><span class="badge text-bg-primary">Süreç Ekle</span></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="table-responsive">
+                            <table class="table align-middle text-nowrap mb-0">
+                                <thead>
+                                    <tr class="text-muted fw-semibold">
+                                        <th scope="col" class="ps-0">Icon</th>
+                                        <th scope="col">Başlık</th>
+                                        <th scope="col">Açıklama</th>
+                                        <th scope="col">Aktif</th>
+                                        <th scope="col">İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="ps-0">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="me-2 pe-1">
+                                                        <i class="@item.SurecIkon fs-7"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="mb-0 fs-3 text-dark">@item.SurecAdi</p>
+                                            </td>
+                                            <td>
+                                                <span class="fs-3 text-dark mb-0">@item.SurecAciklama</span>
+                                            </td>
+                                            <td>
+                                                @if (item.AktifMi == true)
+                                                {
+                                                    <span class="badge text-bg-success">Aktif</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge text-bg-warning">Pasif</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                <ul class="list-unstyled mb-0 d-flex align-items-center">
+                                                    <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Aktif Yap">
+                                                        <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="/Admin/Surecler/AktifYap/@item.SurecID">
+                                                            <i class="ti ti-star"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Düzenle">
+                                                        <a class="d-block text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="/Admin/Surecler/SurecGuncelle/@item.SurecID">
+                                                            <i class="ti ti-edit"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Sil">
+                                                        <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="/Admin/Surecler/SurecSil/@item.SurecID">
+                                                            <i class="ti ti-trash"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

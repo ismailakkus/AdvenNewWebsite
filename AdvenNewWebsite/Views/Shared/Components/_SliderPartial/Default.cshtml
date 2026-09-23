@@ -1,0 +1,61 @@
+﻿@using EntityLayer.Concrete
+@model List<Sliderlar>
+<div class="overflow-hidden">
+	<div class="position-relative">
+		<div class="js-swiper-blog-modern-hero swiper swiper-equal-height">
+			<div class="swiper-wrapper">
+				@foreach (var item in Model)
+				{
+					<div class="swiper-slide bg-img-start content-space-2 content-space-t-sm-3 content-space-b-sm-4" style="background-image: url(/Upload/Sliderlar/@item.SliderFoto);">
+						<!-- Container -->
+						<div class="container content-space-b-sm-2">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="mb-5">
+										<h2 class="h1 text-white">@item.SliderAciklama</h2>
+									</div>
+									<!-- Media -->
+									<div class="d-flex align-items-center mb-3">
+										<div class="flex-shrink-0">
+											@*<div class="avatar avatar-circle">
+								<img class="avatar-img" src="~/Unify/assets/img/160x160/img10.jpg" alt="Image Description">
+								</div> *@
+										</div>
+
+										<div class="flex-grow-1 ms-3">
+											<a class="text-white" href="./blog-article.html">@String.Format("{0:dd.MM.yyyy}", item.EklemeTarihi)</a>
+										</div>
+									</div>
+									<!-- End Media -->
+									<a class="btn btn-light btn-pointer" href="@item.SliderLink">Devamını Oku</a>
+								</div>
+								<!-- End Col -->
+							</div>
+							<!-- End Row -->
+						</div>
+						<!-- End Container -->
+					</div>
+				}
+			</div>
+
+			<!-- Swiper Pagination -->
+			<div class="js-swiper-blog-modern-hero-pagination swiper-pagination swiper-pagination-light position-absolute bottom-0 start-0 end-0 mb-3 d-sm-none"></div>
+		</div>
+		<div class="position-sm-absolute bottom-0 start-0 end-0 zi-2 d-none d-sm-block mb-7">
+			<div class="container content-space-t-1">
+				<div class="js-swiper-blog-modern-hero-thumbs swiper swiper-step-pagination swiper-step-pagination-light">
+					<div class="swiper-wrapper">
+						<!-- Slide -->
+						@foreach (var item in Model)
+						{
+							<div class="swiper-slide">
+								<span class="swiper-step-pagination-title">@item.SliderBaslik</span>
+							</div>
+						}
+						<!-- End Slide -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concrete
+@model List<Surecler>
+
+<!-- Features -->
+<div class="container content-space-1">
+	<!-- List -->
+	<ul class="list-equal-height list-equal-height-4-cols">
+		@foreach (var item in Model)
+		{
+			<li class="list-equal-height-item">
+				<div class="text-center">
+					<div class="mb-3">
+						<i class="@item.SurecIkon fs-1 text-dark"></i>
+					</div>
+					<h5>@item.SurecAdi</h5>
+					<p>@item.SurecAciklama</p>
+				</div>
+			</li>
+		}
+	</ul>
+    <!-- End List -->
+</div>
+<!-- End Features -->

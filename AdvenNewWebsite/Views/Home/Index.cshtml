@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "Anasayfa";
+}
+
+<main id="content" role="main">
+	<!-- Slider -->
+	@await Component.InvokeAsync("_SliderPartial")
+	<!-- End Slider -->
+	<!-- Icon -->
+	@await Component.InvokeAsync("_IconPartial")
+	<!-- End Icon -->
+	<!-- Proje -->
+	@await Component.InvokeAsync("_ProjePartial")
+	<!-- End Proje -->
+	<!-- Hizmet -->
+	@await Component.InvokeAsync("_HizmetPartial")
+	<!--End Hizmet-->
+	<!-- Haber -->
+	@await Component.InvokeAsync("_HaberPartial")
+	<!-- End Haber -->
+	<!-- Bülten -->
+	@await Html.PartialAsync("~/Views/Home/BultenEkle.cshtml")
+	
+	<!-- End Bülten -->
+	<!-- Referans -->
+	@await Component.InvokeAsync("_ReferansPartial")
+	<!-- End Referans -->
+</main>

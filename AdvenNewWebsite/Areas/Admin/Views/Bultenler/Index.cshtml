@@ -1,0 +1,55 @@
+﻿@using EntityLayer.Concrete
+@model List<Bultenler>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+	<div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+		<div class="card-body px-4 py-3">
+			<div class="row align-items-center">
+				<div class="col-9">
+					<h4 class="fw-semibold mb-8">Mail Bülteni</h4>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a class="text-muted text-decoration-none" href="/Admin/">Anasayfa</a>
+							</li>
+							<li class="breadcrumb-item" aria-current="page">Mail Bülteni</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-3">
+					<div class="text-center mb-n5">
+						<img src="~/Admin/assets/images/breadcrumb/ChatBc-1.png" class="img-fluid mb-n4">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card w-100 position-relative overflow-hidden">
+		<div class="px-4 py-3 border-bottom">
+			<div class="d-flex align-items-center justify-content-between mb-2">
+				<h4 class="mb-0">Mail Listesi</h4>
+				<a href="BultenEkle"><span class="badge text-bg-primary">Yeni Bülten</span></a>
+			</div>
+		</div>
+
+		<div class="card-body col-md-6 col-lg-4 p-4">
+			<div class="table-responsive mb-4 border rounded-1">
+				<ol class="list-group list-group-numbered">
+					@foreach (var item in Model)
+					{
+						<li class="list-group-item d-flex justify-content-between align-items-start m-0">
+							<div class="ms-2 me-auto">
+								<div class="fw-bold">@item.MailAdresi</div>
+							</div>
+							<a href="/Admin/Bultenler/BultenSil/@item.MailID"><span class="badge bg-primary">Sil</span></a>
+						</li>
+					}
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>

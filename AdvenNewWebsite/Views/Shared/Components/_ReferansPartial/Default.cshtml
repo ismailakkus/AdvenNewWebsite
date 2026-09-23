@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concrete
+@model List<Referanslar>
+
+<div class="container content-space-1">
+	<!-- Heading -->
+	<div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+		<h2>Referanslar ve Çözüm Ortaklarımız</h2>
+	</div>
+	<!-- End Heading -->
+	<!-- Swiper Slider -->
+	<div class="js-swiper-clients-1 swiper text-center">
+		<div class="swiper-wrapper">
+			@foreach (var item in Model)
+			{
+				<div class="swiper-slide">
+					<img class="avatar avatar-lg avatar-4x3" src="/Upload/Referanslar/@item.ReferansLogo" alt="Logo">
+				</div>
+				<!-- End Slide -->
+			}
+		</div>
+	</div>
+	<!-- End Swiper Slider -->
+</div>

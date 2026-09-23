@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("/Views/LayoutPartial/_HeadPartial.cshtml")
+
+
+<body>
+    <!-- ========== HEADER ========== -->
+    @await Html.PartialAsync("/Views/LayoutPartial/_HeaderPartial.cshtml")
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    @RenderBody()
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- ========== FOOTER ========== -->
+    @await Html.PartialAsync("/Views/LayoutPartial/_FooterPartial.cshtml")
+    <!-- ========== END FOOTER ========== -->
+    @await Html.PartialAsync("/Views/LayoutPartial/_ScriptsPartial.cshtml")
+</body>
+</html>
+
+
+

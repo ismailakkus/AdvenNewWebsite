@@ -1,0 +1,19 @@
+﻿@using EntityLayer.Concrete
+@model List<Hizmetler>
+
+<!-- Mega Menu -->
+<div class="dropdown-menu dropdown-menu-end" aria-labelledby="hizmetMegaMenu" style="min-width: 15rem;">
+    <!-- Main Content -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="navbar-dropdown-menu-inner">
+				@foreach (var item in Model)
+				{
+					<a class="dropdown-item " href="#">@item.HizmetAdi</a>
+				}
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content -->
+</div>
+<!-- End Mega Menu -->

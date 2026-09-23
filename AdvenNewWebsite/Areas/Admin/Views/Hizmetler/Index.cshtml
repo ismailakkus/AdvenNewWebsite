@@ -1,0 +1,86 @@
+﻿@using EntityLayer.Concrete
+@model List<Hizmetler>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+        <div class="card-body px-4 py-3">
+            <div class="row align-items-center">
+                <div class="col-9">
+                    <h4 class="fw-semibold mb-8">Hizmetler</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a class="text-muted text-decoration-none" href="/Admin/Home/">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">Hizmetler</li>
+                            <li class="breadcrumb-item" aria-current="page">
+                                <a class="text-muted text-decoration-none" href="/Admin/Hizmetler/HizmetEkle/"><span class="badge text-bg-primary">Hizmet Ekle</span></a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <div class="text-center mb-n5">
+                        <img src="../assets/images/breadcrumb/ChatBc-1.png" alt="modernize-img" class="img-fluid mb-n4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="related-products pt-7">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card hover-img overflow-hidden">
+                        <div class="position-relative">
+                            <a href="javascript:void(0)"><img src="~/Upload/Hizmetler/@item.Foto" class="card-img-top" alt="@item.HizmetAdi" height="250"></a>
+                        </div>
+                        <div class="card-body pt-3 p-4">
+                            <h6 class="fs-4">@item.HizmetAdi</h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="fs-4 mb-0">
+                                    <span class="ms-2 fw-normal text-muted fs-3">
+                                        @if (item.Anasayfa == true)
+                                        {
+                                            <span class="badge bg-success-subtle text-success fw-semibold fs-2 gap-1 d-inline-flex align-items-center"><i class="ti ti-check fs-4"></i> Anasayfa</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge text-bg-light text-dark fw-semibold fs-2 gap-1 d-inline-flex align-items-center">Menü</span>
+                                        }
+                                    </span>
+                                </h6>
+                                <div class="ms-auto">
+                                    <ul class="list-unstyled mb-0 d-flex align-items-center">
+
+                                        <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Anasayfa">
+                                            <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="/Admin/Hizmetler/AnasayfadaGoster/@item.HizmetID">
+                                                <i class="ti ti-star"></i>
+                                            </a>
+                                        </li>
+                                        <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Düzenle">
+                                            <a class="d-block text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="/Admin/Hizmetler/HizmetGuncelle/@item.HizmetID">
+                                                <i class="ti ti-edit"></i>
+                                            </a>
+                                        </li>
+                                        <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Sil">
+                                            <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="/Admin/Hizmetler/HizmetSil/@item.HizmetID">
+                                                <i class="ti ti-trash"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

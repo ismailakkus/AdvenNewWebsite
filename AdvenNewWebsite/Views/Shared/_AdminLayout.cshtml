@@ -1,0 +1,24 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
+
+@await Html.PartialAsync("/Views/AdminLayoutPartial/_HeadPartial.cshtml")
+
+<body>
+	@await Html.PartialAsync("/Views/AdminLayoutPartial/_PreLoaderPartial.cshtml")
+	<div id="main-wrapper">
+		@await Html.PartialAsync("/Views/AdminLayoutPartial/_LeftSidebarPartial.cshtml")
+		<div class="page-wrapper">
+			@await Html.PartialAsync("/Views/AdminLayoutPartial/_HeaderPartial.cshtml")
+			<div class="body-wrapper">
+				@RenderBody()
+			</div>
+			@await Html.PartialAsync("/Views/AdminLayoutPartial/_ThemeSettingPartial.cshtml")
+		</div>
+	</div>
+</body>
+@await Html.PartialAsync("/Views/AdminLayoutPartial/_ScriptsPartial.cshtml")
+</html>

@@ -1,0 +1,202 @@
+﻿@using EntityLayer.Concrete
+@model List<Hizmetler>
+
+<!-- Features -->
+<div class="overflow-hidden">
+	<div class="container content-space-1">
+		<!-- Heading -->
+		<div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+            <h2>Hizmet verdiğimiz alanlar</h2>
+            <p>Tasarım ve teknolojinin başarılı bir şekilde uygulanmasıyla insan hayatlarını zenginleştiriyoruz</p>
+		</div>
+		<!-- End Heading -->
+
+		<div class="position-relative content-space-1">
+			<div class="row justify-content-lg-between align-items-md-center">
+				<div class="col-md-6 col-lg-5 order-md-2 mb-7 mb-md-0">
+
+					<!-- Nav Pills -->
+					<ul class="nav nav-pills nav-pills-shadow flex-md-column gap-md-1" id="featuresTab" role="tablist">
+						@{
+							var i = 0;
+							foreach (var item in Model)
+							{
+								var itemClass = i++ == 0 ? "nav-link active" : "nav-link";
+								<li class="nav-item" role="presentation">
+									<a class="@itemClass" href="#features-@item.HizmetID" id="features-@item.HizmetID-tab" data-bs-toggle="tab" data-bs-target="#features-@item.HizmetID" role="tab" aria-controls="features-@item.HizmetID" aria-selected="false">
+										<!-- Media -->
+										<div class="d-flex">
+
+											<div class="flex-grow-1 ms-4">
+												<h6 class="text-success mb-1">@item.HizmetAdi</h6>
+											</div>
+										</div>
+										<!-- End Media -->
+									</a>
+								</li>
+							}
+						}
+					</ul>
+					<!-- End Nav Pills -->
+				</div>
+				<!-- End Col -->
+
+				<div class="col-md-6">
+					<div class="position-relative">
+						<!-- Tab Content -->
+						<div class="tab-content" id="featuresTabContent">
+							@{
+
+								var j = 0;
+								foreach (var item in Model)
+								{
+									var itemClass = j++ == 0 ? "tab-pane fade show active" : "tab-pane fade";
+									<div class="@itemClass" id="features-@item.HizmetID" role="tabpanel" aria-labelledby="features-@item.HizmetID-tab">
+										<img class="img-fluid shadow rounded-3" src="~/Upload/Hizmetler/@item.Foto" alt="@item.HizmetAdi">
+									</div>
+								}
+							}
+						</div>
+						<!-- End Tab Content -->
+						<!-- SVG Shape -->
+						<figure class="position-absolute top-0 end-0 mt-n5 me-n10" style="width: 4rem;">
+							<img class="img-fluid" src="~/Unify/assets/svg/components/pointer-up.svg" alt="Image Description">
+						</figure>
+						<!-- End SVG Shape -->
+					</div>
+				</div>
+				<!-- End Col -->
+			</div>
+			<!-- End Row -->
+
+			<div class="position-absolute top-0 end-0 w-100 w-lg-65 h-65 h-md-100 bg-soft-primary rounded-3 zi-n1 me-n5"></div>
+		</div>
+	</div>
+</div>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$("[id$=nav-link]").addClass("active");
+	});
+</script>
+<!-- End Features -->
+@* <!-- Card Grid -->
+<div class="overflow-hidden">
+    <div class="container content-space-1">
+        <div class="row justify-content-lg-between">
+            <div class="col-md-4 mb-7 mb-md-0">
+                <div class="mt-md-10 mb-5">
+                    <h2>Explore helpful resources</h2>
+                    <p>Our blog is packed with articles and insights to help you stay up to date with all things identity verification</p>
+                </div>
+
+                <!-- Alert -->
+                <div class="alert alert-soft-dark" role="alert">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="bi-instagram"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            Follow us on <a class="alert-link" href="#" target="_blank">Instagram</a> to see Life at Unify
+                        </div>
+                    </div>
+                </div>
+                <!-- End Alert -->
+            </div>
+            <!-- End Col -->
+
+            <div class="col-md-7">
+                <!-- Swiper Slider -->
+                <div class="swiper-center-mode-end">
+                    <div class="js-swiper-card-grid swiper swiper-equal-height ps-4">
+                        <div class="swiper-wrapper">
+                            <!-- Slide -->
+                            <div class="swiper-slide pt-4 pb-8">
+                                <!-- Card -->
+                                <a class="card card-transition" href="#">
+                                    <div class="card-pinned">
+                                        <img class="card-img-top" src="~/Unify/assets/svg/components/card-3.svg" alt="Image Description">
+                                        <span class="badge bg-dark text-white card-pinned-top-end">Design</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Explore the Snippets tool</h5>
+                                        <p>Answer a few simple questions to get your policy. Talk to an agent if you need help.</p>
+                                    </div>
+                                    <div class="card-footer pt-0">
+                                        <span class="card-link">Read more</span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Slide -->
+                            <!-- Slide -->
+                            <div class="swiper-slide pt-4 pb-8">
+                                <!-- Card -->
+                                <a class="card card-transition bg-primary" href="#" style="background-image: url(/Unify/assets/svg/components/wave-pattern-light.svg);">
+                                    <div class="card-body">
+                                        <span class="card-subtitle text-white mb-3">Product</span>
+                                        <h3 class="card-title text-white lh-base">Assessing Constraints: Making Products for all Users</h3>
+                                    </div>
+                                    <div class="card-footer pt-0">
+                                        <span class="card-link link-light">Read more</span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Slide -->
+                            <!-- Slide -->
+                            <div class="swiper-slide pt-4 pb-8">
+                                <!-- Card -->
+                                <a class="card card-transition" href="#">
+                                    <div class="card-pinned">
+                                        <img class="card-img-top" src="~/Unify/assets/svg/components/card-1.svg" alt="Image Description">
+                                        <span class="badge bg-dark text-white card-pinned-top-end">Design</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Have a meaningful impact</h5>
+                                        <p>Answer a few simple questions to get your policy. Talk to an agent if you need help.</p>
+                                    </div>
+                                    <div class="card-footer pt-0">
+                                        <span class="card-link">Read more</span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Slide -->
+                            <!-- Slide -->
+                            <div class="swiper-slide pt-4 pb-8">
+                                <!-- Card -->
+                                <a class="card card-transition bg-warning" href="#" style="background-image: url(/Unify/assets/svg/components/wave-pattern-2-light.svg);">
+                                    <div class="card-body">
+                                        <span class="card-subtitle text-white mb-3">Insights</span>
+                                        <h3 class="card-title text-white lh-base">Making the Brand: Fresh Finds Playlist Collection</h3>
+                                    </div>
+                                    <div class="card-footer pt-0">
+                                        <span class="card-link link-light">Read more</span>
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Slide -->
+                        </div>
+
+                        <!-- Arrows -->
+                        <div class="js-swiper-card-grid-button-prev swiper-button-prev swiper-static-button-prev"></div>
+                        <div class="js-swiper-card-grid-button-next swiper-button-next swiper-static-button-next"></div>
+
+                        <!-- Preloader -->
+                        <div class="js-swiper-preloader swiper-preloader">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <!-- End Preloader -->
+                    </div>
+                </div>
+                <!-- End Swiper Slider -->
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Row -->
+    </div>
+</div>
+<!-- End Card Grid --> *@
